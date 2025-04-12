@@ -16,5 +16,6 @@ class Profile extends Model
 'karamoozi_address',
 'karamoozi_post',
 'karfarma',
+'shop_number',
    ];
 }

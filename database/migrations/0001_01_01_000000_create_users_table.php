@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('code_melli')->unique();
-            $table->string('birth');
             $table->string('major');
+            $table->string('hr');
+            $table->string('birth');
             $table->rememberToken();
             $table->timestamps();
         });

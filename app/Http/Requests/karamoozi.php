@@ -27,6 +27,7 @@ class karamoozi extends FormRequest
             'karamoozi_address'=>['required','string'],
             'karamoozi_post'=>['required','numeric','digits:10'],
             'karfarma'=>['required','string'],
+            'shop_number'=>['required','numeric'],
         ];
     }
     public function messages()
@@ -47,6 +48,8 @@ class karamoozi extends FormRequest
     
             'karfarma.required' => 'وارد کردن نام کارفرما الزامی است.',
             'karfarma.string' => 'نام کارفرما باید به صورت متن وارد شود.',
+            'shop_number.required'=>'وارد کردن شماره مغازه اجباری است',
+            'shop_number.numeric'=>'فرمت شماره وارد شده صحیح نیست',
         ];
     }
     

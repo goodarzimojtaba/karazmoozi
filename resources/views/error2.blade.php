@@ -20,7 +20,7 @@
             }
             </style>
         <h2 style="font-family:Vazir;color:red;">شما هنوز اطلاعات کارآموزی خود را ثبت نکردید، در صورت عدم ثبت اطلاعات نمره ای به دوره ی کارآموزی شما تعلق نمی گیرد.</h2>
-        <a href="{{ route('pp') }}" style="font-family:Vazir" class="signup-btn">بازگشت</a>
+        <a style="font-family:Vazir" href="{{route('karamoozi')}}" name="submit" class="signup-btn">ثبت اطلاعات</a>
 
     </div>
 </body>

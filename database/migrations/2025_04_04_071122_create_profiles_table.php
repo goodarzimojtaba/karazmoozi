@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('karamoozi_address')->nullable();
             $table->string('karamoozi_post')->nullable();
             $table->string('karfarma')->nullable();
+            $table->string('shop_number')->nullable();
+
             $table->timestamps();
         });
     }

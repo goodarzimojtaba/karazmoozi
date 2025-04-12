@@ -24,6 +24,7 @@ public function profile(){
         'code_melli',
         'birth',
         'major',
+        'hr',
      
        
         

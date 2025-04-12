@@ -21,9 +21,9 @@
         </header>
         <div class="profile">
             <div class="info">
-                <h2 style="font-family:Vazir">{{$user->code_melli}}</h2>
+                <h2 style="font-family:Vazir">ساعت کارآموزی: {{$user->hr}}</h2>
                 <p style="font-family:Vazir">{{$user->name}}</p>
-                <h4 style="font-family:Vazir">{{$user->major}}</h4>
+                <h4 style="font-family:Vazir">رشته: {{$user->major}}</h4>
                 </div>
         </div>
      
@@ -57,7 +57,7 @@
             </div>
         </div>
         <footer>
-            <p style="font-family:Vazir">Developed by: Mojtaba Goodarzi</p>
+            <p style="font-family:Vazir;">طراحی و توسعه هنرستان شهید یارجانی</p>
         </footer>
     </div>
 </body>

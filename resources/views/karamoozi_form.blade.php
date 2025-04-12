@@ -25,40 +25,46 @@
 @endforeach
         <form method="POST" action="{{route('valid_karamoozi')}}">
             @csrf
-            <label style="font-family:Vazir" >دانش آموز</label>
+            <label style="font-family:Vazir;text-align:center;" >دانش آموز</label>
             <div class="password-container">
-                <input type="text" name="name" style="font-family:Vazir" value="{{$user->name}}" placeholder="" readonly>
+                <input type="text" name="name" style="font-family:Vazir;text-align:center;" value="آقای {{$user->name}}" placeholder="" readonly>
                 <i class="fas fa-eye-slash"></i>
-                <label style="font-family:Vazir" >رشته</label>
+                <label  style="font-family:Vazir;text-align:center;" >ساعت کارآموزی</label>
             <div class="password-container">
-                <input type="text" name="major" style="font-family:Vazir" value="{{$user->major}}" placeholder="" readonly>
+                <input type="text" name="major" style="font-family:Vazir;text-align:center;" value="ساعت {{$user->hr}}" placeholder="" readonly>
                 <i class="fas fa-eye-slash"></i>
-                <label style="font-family:Vazir" class="fas fa-eye-slash" >محله ی کارآموزی</label>
+                <label  style="font-family:Vazir;text-align:center;" class="fas fa-eye-slash" >محله ی کارآموزی</label>
                 <div class="password-container">
-               <select class="fas fa-eye-slash" style="font-family:Vazir"  name="area">
+               <select class="fas fa-eye-slash"  style="font-family:Vazir;text-align:center;"  name="area">
                 <option style="font-family:Vazir">یاخچی آباد</option>
                 <option style="font-family:Vazir">بهمنیار</option>
                 <option style="font-family:Vazir">خانی آباد</option>
                 <option style="font-family:Vazir">عبدل آباد</option>
+                <option style="font-family:Vazir">نعمت آباد</option>
                 <option style="font-family:Vazir">آفتاب</option>
-                <option style="font-family:Vazir">خارج از محدوده</option>
+                <option style="font-family:Vazir">خارج از محدوده(به شرط داشتن مجوز)</option>
         </select>
+        <br>
                
-                <label style="font-family:Vazir" >نام محل کارآموزی</label>
+                <label  style="font-family:Vazir;text-align:center;" >نام محل/مغازه کارآموزی</label>
             <div class="password-container">
-                <input type="text" name="karamoozi_name"  style="font-family:Vazir" value="{{old('karamoozi_name')}}" placeholder="مثال: مکانیکی ناصری" required>
+                <input type="text" name="karamoozi_name" autocomplete="off"  style="font-family:Vazir;text-align:right;" value="{{old('karamoozi_name')}}"  required>
                 <i class="fas fa-eye-slash"></i>
-                <label style="font-family:Vazir" >آدرس کامل کارآموزی</label>
+                <label  style="font-family:Vazir;text-align:center;">آدرس کامل کارآموزی</label>
             <div class="password-container">
-                <input type="text" name="karamoozi_address"   style="font-family:Vazir" value="{{old('karamoozi_address')}}"  required>
+                <input type="text" name="karamoozi_address" autocomplete="off"  style="font-family:Vazir;text-align:right;" value="{{old('karamoozi_address')}}"  required>
                 <i class="fas fa-eye-slash"></i>
-                <label style="font-family:Vazir" >کد پستی کارآموزی</label>
+                <label  style="font-family:Vazir;text-align:center;" >کد پستی کارآموزی</label>
             <div class="password-container">
-                <input type="text" name="karamoozi_post" maxlength="10" style="font-family:Vazir" value="{{old('karamoozi_post')}}" placeholder="کد پستی کارآموزی" required>
+                <input type="text" name="karamoozi_post" autocomplete="off" maxlength="10" style="font-family:Vazir;text-align:center;" value="{{old('karamoozi_post')}}" placeholder="کد پستی کارآموزی" required>
                 <i class="fas fa-eye-slash"></i>
-                <label style="font-family:Vazir" >نام و نام خانوادگی کارفرما</label>
+                <label  style="font-family:Vazir;text-align:center;" > نام خانوادگی کارفرما</label>
             <div class="password-container">
-                <input type="text" name="karfarma"  style="font-family:Vazir" value="{{old('karfarma')}}" placeholder="نام و نام خانوادگی کارفرما" required>
+                <input type="text" name="karfarma" autocomplete="off"   style="font-family:Vazir;text-align:center;" value="{{old('karfarma')}}"  required>
+                <i class="fas fa-eye-slash"></i>
+                <label  style="font-family:Vazir;text-align:center;" >تلفن مغازه یا موبایل کارفرما</label>
+            <div class="password-container">
+                <input type="text" name="shop_number" autocomplete="off" maxlength="11" style="font-family:Vazir;text-align:center;" value="{{old('shop_number')}}"  required>
                 <i class="fas fa-eye-slash"></i>
             </div>
 

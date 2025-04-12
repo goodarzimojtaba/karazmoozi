@@ -24,6 +24,9 @@ if($user){
     Auth::login($user);
   return view('account',compact('user'));  
 } 
+  else{
+    return back()->withErrors(['کد ملی یا تاریخ تولد صحیح نیست']);
+  }
   }
   public function panel()
   {
@@ -53,6 +56,7 @@ public function karamoozi_validation(karamoozi $request) {
               'karamoozi_address' => $request->karamoozi_address,
               'karamoozi_post' => $request->karamoozi_post,
               'karfarma' => $request->karfarma,
+              'shop_number'=>$request->shop_number,
           ]
       );
       return view('account', compact('user'));
@@ -68,9 +72,25 @@ public function show_data(){
   }
 }
 public function logout(Request $request){
-  Auth::logout($user);
+  Auth::logout();
   $request->session()->invalidate();
   $request->session()->regenerateToken();
-  return redirect()->route('welcome');
+  return redirect()->route('vorod');
+}
+public function manager(request $request){
+  $user=Auth()->user();
+  if($user && $user->id ==99){
+    $nama=User::with('profile')
+    ->has('profile')
+    ->orderby('major','asc')
+    ->get();
+    return view('manager',compact('nama'));
+  }
+  else{
+    Auth::logout();
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+    return view('enter_form');
+  }
 }
 }

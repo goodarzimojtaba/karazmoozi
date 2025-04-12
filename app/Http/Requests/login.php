@@ -23,14 +23,14 @@ class login extends FormRequest
     {
         return [
            'code_melli'=>['numeric','required'],
-           'birth'=>['numeric','digits:4','required']
+           'birth'=>['numeric','digits:6','required']
         ];
     }
     public function messages(){
         return[
             'code_melli.required'=>'کد ملی را وارد نکردید!',
             'birth.required'=>'سال تولد خود را وارد نکردید',
-            'birth.digits'=>'سال تولد را بصورت دو رقمی وارد نمایید',
+            'birth.digits'=>'سال تولد را بصورت 6 رقمی وارد نمایید',
         ];
     }
 }

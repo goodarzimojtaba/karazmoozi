@@ -19,23 +19,29 @@
                 src: url("https://yarjani19.com/mark/fonts/Vazir.woff2")format("woff2");
             }
             </style>
-        <h2 style="font-family:Vazir">سامانه دانش آموزی</h2>
+        <h2 style="font-family:Vazir">سامانه کارآموزی</h2>
+        @if($errors->any())
         @foreach($errors->all() as $error)
         <label style="font-family:Vazir">{{$error}}</label>
 @endforeach
+@endif
         <form method="POST" action="{{ route('login') }}">
             @csrf
-            <label style="font-family:Vazir">کد ملی</label>
-            <input type="number" name="code_melli" maxlength="12" style="font-family:Vazir" value="{{old('code_melli')}}" placeholder="کد ملی" required>
+            <label style="font-family:Vazir;text-align:center;">کد ملی</label>
+            <input type="number" name="code_melli" autocomplete="off" maxlength="12" style="font-family:Vazir;text-align:center;" value="{{old('code_melli')}}" placeholder="کد ملی" required>
             
-            <label style="font-family:Vazir" >سال تولد</label>
+            <label style="font-family:Vazir;text-align:center;" >تاریخ تولد</label>
             <div class="password-container">
-                <input type="text" name="birth" maxlength="4" style="font-family:Vazir" value="{{old('birth')}}" placeholder="مثال: 1385 " required>
+                <input type="text" name="birth" autocomplete="off" maxlength="6" style="font-family:Vazir;text-align:center;" value="{{old('birth')}}" placeholder="مثال: 860112 " required>
                 <i class="fas fa-eye-slash"></i>
             </div>
 
 
             <button style="font-family:Vazir" type="submit" name="submit" class="signup-btn">ورود به سامانه</button>
+        <p style="font-family:Vazir;color:red;text-align:center;">کد ملی خود را بدون 0 در ابتدای آن وارد کنید</p>
+        <br>
+        <p style="font-family:Vazir;color:red;text-align:center;">بطور مثال اگر تاریخ تولد شما 21 فروردین 1386 است آن را بصورت 860121 وارد نمایید</p>
+
         </form>
     </div>
 </body>

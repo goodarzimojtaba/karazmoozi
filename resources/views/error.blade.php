@@ -20,6 +20,8 @@
             }
             </style>
         <h2 style="font-family:Vazir;color:green;">اطلاعات شما ثبت شده است</h2>
+        <a style="font-family:Vazir" href="{{route('show_data')}}" name="submit" class="signup-btn">مشاهده اطلاعات ثبت شده</a>
+
             
     </div>
 </body>

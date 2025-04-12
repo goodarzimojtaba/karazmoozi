@@ -6,10 +6,10 @@ use App\Http\Controllers\play;
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
-Route::get('/enter_form',[play::class,'start_app']);
+Route::get('/enter_form',[play::class,'start_app'])->name('vorod')->middleware('guest');
 Route::POST('/enter_form',[play::class,'login'])->name('login');
 Route::get('/account',[play::class,'panel'])->name('pp');
-Route::get('/karamoozi_form',[play::class,'karamoozi_page'])->name('karamoozi');
+Route::get('/karamoozi_form',[play::class,'karamoozi_page'])->name('karamoozi')->middleware('auth');
 Route::POST('/karamoozi_form',[play::class,'karamoozi_validation'])->name('valid_karamoozi');
 Route::get('/error',function(){
     return view('error');
@@ -19,3 +19,5 @@ Route::get('/error2',function(){
 })->name('error2');
 Route::get('/profile',[play::class,'show_data'])->name('show_data');
 Route::get('/welcome',[play::class,'logout'])->name('logout');
+Route::POST('/welcome',[play::class,'logout'])->name('sign-out');
+Route::get('/manager',[play::class,'manager'])->name('manager');
